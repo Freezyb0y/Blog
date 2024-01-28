@@ -1,0 +1,12 @@
+<%- include("partials/header.ejs") %>
+
+<div style="text-align: center;">
+    <h1><%= post.title %></h1>
+    <p><%= post.content %></p>
+    <a href="/edit/<%= post.id %>">Edit</a> <!-- Edit link -->
+    <!-- Add a delete link with a form for confirmation -->
+    <form action="/delete/<%= post.id %>" method="POST" onsubmit="return confirm('Are you sure you want to delete this post?');">
+        <button type="submit" class="button2">Delete</button>
+    </form>
+</div>
+<%- include("partials/footer.ejs") %>

@@ -1,0 +1,20 @@
+<%-  include("partials/header.ejs") %>
+
+<h1 style="text-align: center;">Create a New Blog Post</h1>
+
+    <% if (errorMessage) { %>
+        <p class="error-message"><%= errorMessage %></p>
+    <% } %>
+
+    <form action="/new" method="POST">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" class="title-input"><br>
+
+        <label for="content">Content:</label><br>
+        <textarea id="content" name="content" class="large-input"></textarea><br>
+
+        <input type="submit" value="Create Post" id="hover">
+    </form>
+    <br>
+
+<%-  include("partials/footer.ejs") %>
